@@ -57,7 +57,7 @@ Template.practice.events({
           newTime = instance.time.get();
           element.text("Your time was " + diff + ". You didn't do too well that time, but you weren't super far off. " + tip + " Click the button when you're ready to try again, and click again in " + newTime + " seconds.");
         } else {
-          instance.time.set(Math.max(instance.time.get() - 1, 2));
+          instance.time.set(Math.max(instance.time.get() - 1, 1));
           newTime = instance.time.get();
           element.text("Your time was " + diff + ". You didn't do very well. I'll decrease the goal time by 1 second to make it easier for you. Click the button when you're ready, and click again in " + newTime + " seconds.");
         }
