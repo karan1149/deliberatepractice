@@ -38,24 +38,26 @@ Template.practice.events({
         if (Math.abs(diff - instance.time.get()) < .25){
           instance.time.set(instance.time.get() + 2);
           newTime = instance.time.get();
-          element.text("Amazing job! You were within .25s of the goal time. I'll increase the goal time by 2 seconds since you're so good. Click the button when you're ready, and click again in " + newTime + " seconds.");
+          element.text("Your time was " + diff + ". Amazing job! You were within .25s of the goal time. I'll increase the goal time by 2 seconds since you're so good. Click the button when you're ready, and click again in " + newTime + " seconds.");
         } else {
           instance.time.set(instance.time.get() + 1);
           newTime = instance.time.get();
-          element.text("Good job! You were within .5s of the goal time. I'll increase the goal time by 1 second since you're doing well. Click the button when you're ready, and click again in " + newTime + " seconds.");
+          element.text("Your time was " + diff + ". Good job! You were within .5s of the goal time. I'll increase the goal time by 1 second since you're doing well. Click the button when you're ready, and click again in " + newTime + " seconds.");
         }
 
       } else{
+        var tips = ["Try tapping your finger on every second.", "Try counting out the seconds in your mind.", "Try imagining looking at a clock in your mind.", "Try looking at the rhythm of a timer and coming back to this.", "Try counting the seconds out loud.", "Try clapping at each second.", "Try snapping at each second."];
+        var tip = tips[Math.floor(Math.random()*tips.length)];
         if (Math.abs(diff - instance.time.get()) < 1){
           newTime = instance.time.get();
-          element.text("You didn't do quite well enough. But you were very close. Try tapping your finger on every second next time. Click the button when you're ready, and click again in " + newTime + " seconds.");
+          element.text("Your time was " + diff + ". You didn't do quite well enough. But you were very close. " + tip + " Click the button when you're ready, and click again in " + newTime + " seconds.");
         } else if (Math.abs(diff - instance.time.get()) < 2){
           newTime = instance.time.get();
-          element.text("You didn't do too well that time, but you weren't super far off. Try counting the seconds in your mind. Click the button when you're ready to try again, and click again in " + newTime + " seconds.");
+          element.text("Your time was " + diff + ". You didn't do too well that time, but you weren't super far off. " + tip + " Click the button when you're ready to try again, and click again in " + newTime + " seconds.");
         } else {
           instance.time.set(instance.time.get() - 1);
           newTime = instance.time.get();
-          element.text("You didn't do very well. I'll decrease the goal time by 1 second to make it easier for you. Click the button when you're ready, and click again in " + newTime + " seconds.");
+          element.text("Your time was " + diff + ". You didn't do very well. I'll decrease the goal time by 1 second to make it easier for you. Click the button when you're ready, and click again in " + newTime + " seconds.");
         }
       }
 
