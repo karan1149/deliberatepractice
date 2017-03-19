@@ -1,1 +1,26 @@
-/* CSS declarations go here */
+
+#practice-container {
+  font-family: 'Open Sans', "Arial", sans-serif;
+  width: 80%;
+  margin-left:auto;
+  margin-right: auto;
+  text-align:center;
+  margin-top:150px;
+}
+
+#practice-container h1 {
+  font-size: 50px;
+}
+
+#practice-container p {
+  margin-top:70px;
+  margin-bottom:40px;
+}
+
+#practice-container button {
+  margin-top:20px;
+  border: 1px solid #111;
+  font-size:30px;
+  padding: 9px 45px;
+  background-color: #fff;
+}
