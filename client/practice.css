@@ -8,6 +8,10 @@
   margin-top:150px;
 }
 
+#instructions {
+  height:50px;
+}
+
 #practice-container h1 {
   font-size: 50px;
 }
