@@ -2,9 +2,11 @@
   <div id="practice-container">
     <h1>Timing Deliberate Practice Engine</h1>
     <h3>Welcome! This is a practice engine for timing designed around the principles of <a href="https://en.wikipedia.org/wiki/Practice_(learning_method)#Deliberate_practice">deliberate practice</a>.</h3>
-    <p>The idea is that you practice estimating how long time intervals take without using a timer. You'll get immediate feedback on how you do and exercises will become more difficult as you master them.
+    <p id="instructions">The idea is that you practice estimating how long time intervals take without using a timer. You'll get immediate feedback on how you do and exercises will become more difficult as you master them.
       When you are ready, click on the button below, and then click again in exactly 3 seconds.
     </p>
     <button>Start</button>
+
+    <h4>Current goal time: {{time}} seconds</h4>
   </div>
 </template>
