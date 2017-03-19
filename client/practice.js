@@ -20,16 +20,19 @@ Template.practice.helpers({
 Template.practice.events({
   'click button'(event, instance) {
     var element = $("#instructions");
+    var button = $("button");
     if (!Session.get('timing')){
       Session.set('timing', true);
       curTime = instance.time.get();
       // if(Session.get("instructions")){
       //     Session.set("instructions", false);
       element.text("Click again in " + curTime + " seconds!");
+      button.text("Stop");
       // }
       Session.set('startTime', Date.now());
     } else{
       Session.set('timing', false);
+      button.text("Start");
       finishTime = Date.now();
       startTime = Session.get('startTime');
       diff = (finishTime - startTime) /1000;
@@ -54,7 +57,7 @@ Template.practice.events({
           newTime = instance.time.get();
           element.text("Your time was " + diff + ". You didn't do too well that time, but you weren't super far off. " + tip + " Click the button when you're ready to try again, and click again in " + newTime + " seconds.");
         } else {
-          instance.time.set(instance.time.get() - 1);
+          instance.time.set(Math.max(instance.time.get() - 1, 2));
           newTime = instance.time.get();
           element.text("Your time was " + diff + ". You didn't do very well. I'll decrease the goal time by 1 second to make it easier for you. Click the button when you're ready, and click again in " + newTime + " seconds.");
         }
