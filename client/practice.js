@@ -33,7 +33,6 @@ Template.practice.events({
       finishTime = Date.now();
       startTime = Session.get('startTime');
       diff = (finishTime - startTime) /1000;
-      console.log(diff);
       if (Math.abs(diff - instance.time.get()) < .5){
         if (Math.abs(diff - instance.time.get()) < .25){
           instance.time.set(instance.time.get() + 2);
